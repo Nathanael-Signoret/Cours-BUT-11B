@@ -1,0 +1,38 @@
+4.1 On voit qu'il y a une erreur et que le debuger montre pas a pas l'execution du code afin de nous montrer où est l'erreur
+Les éléments sont tous de types int
+4.2 a, b et x sont des ints, A est un float la valeur a est modifiée, et les autres valeurs sont crées. 
+On renvoie a à la fin du code
+
+7.1 Les données d'entrée de cet algorithme sont : 
+-Le record perso
+-3 courses gagnées?
+OU
+-champion ? ou pas champion
+
+7.2         QUALIF
+100m en 10 secondes, 6 courses gagnées, pas champion
+100 m en 8.7 secondes, 2 courses gagnées, champion
+            PAS QUALIF
+100m en 15 secondes, 18 courses gagnées, pas champion
+100m en 2 secondes, 2 courses gagnées, pas champion 
+
+8.1
+Les parametres sont :
+- Vitesse 
+- Limite de vitesse 
+- Recidive
+8.2
+Limite 30km/h
+Vitesse 63 km/h
+Recidive False 
+Sanction : 135 euros, -3 points, jusqu'à 3 ans de suspension de permis
+
+Limite 80 km/h
+Vitesse 140 km/h
+Recidive False
+Sanction : 1500 euros, -6 points, jusqu'à 3 ans de suspension
+
+Limite 80 km/h
+Vitesse 140 km/h
+Recidive True
+Sanction : Prison 3 mois, 3750 euros, -6 points, jusqu'à 3 ans de suspension

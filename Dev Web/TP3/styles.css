@@ -1,0 +1,60 @@
+body{
+  margin: 5em;
+}
+nav{
+  color:blue
+}
+h1{
+  font-size: 400%;
+}
+ul{  
+  padding: 0;
+  list-style: none;
+}
+
+li{
+  margin-right: 2em;
+  margin-top: 1em;
+}
+
+main{
+  padding-top: 2em;
+}
+
+article{
+  margin-right: 20%;
+}
+
+footer{
+  padding-top: 1em;
+}
+
+footer > p{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+h1, main{
+  border-bottom: 5px solid;
+}
+header{
+  border-bottom: 1px solid;
+}
+
+h1>span{
+  display: block;
+  color: gray;
+  font-style:italic; 
+}
+img{
+  width : 1em;
+  height : 1em;
+}
+nav > ul{
+  margin-bottom: 0px;
+}
+
+
+

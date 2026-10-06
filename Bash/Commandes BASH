@@ -1,0 +1,65 @@
+ls : la liste des fichiers et dossiers dans l'emplacement actuel. ls -a permet d'afficher les dossiers invisibles (qu icommencent par un .). ls -l pour les perms
+cd : sert à se deplacer dans l'arborescence des dossiers : cd {Nom du dossier}
+Chemin d'accès de l'arborescence : /home/Nath/Perso  (premier / = racine) RACINE = CHEMIN ABSOLU (on part du début de l'arbre)
+/home/Nath est MON home, pas /home. /home est le home de tout les utilisateurs 
+cd .. = se déplacer en arrière. cd sans arguments pour revenir au home 
+cd ~/ permet de revenir à MON home, donc /home/sasha
+cat README pour lire le contenu du fichier texte nommé README 
+Touche TAB = Auto complétion des noms de fichiers 
+Le dossier dans lequel on se situe peut etre représenté par . ou ./ 
+Ainsi, cd . nous déplace dans le fichier où on est déjà
+echo : un peu un print python, affiche le contenu mis après : echo weeee la citeee affiche weeee la citeee
+une ligne bash est une ligne de commande
+cd, ls,... sont des commandes. -a, -l,... sont des options. Si on a plusieurs options, on l'ecrit -al
+Tout ce qui est apres (/home/sasha/Exo1 par exemple) sont des arguments
+touch : permet de modifier la date de modification d'un fichier sans en modifier le contenu, et permet surtout de créer de nouveaux fichier en écrivant touch + un nom de
+fichier non existant
+rm : remove directory, permet de supprimer un fichier. On peut supprimer des dossiers avexc l'otpion -rS
+du : permet d'esitemer la taille d'un dossier. On l'utilise avec -s pour summarize et -h pour rendre les valeurs + claires : du -sh nom_fichier
+cp : copie le fichier mis en argument. On écrit cp nom_fichie.txt emplacement_destination
+grep : recherche un mot dans un fichier
+Pour executer un fichier, il suffit de taper le chemin vers ce fichier
+mv : déplace le fichier mis en argument dans le dossier en argument2. S'ecrit mv nom_fichier nom_dossier. Si nom_dossier n'existe pas, on rename le nom_fichier en nom_dossier
+man : consulte la documentation d'une commande. Ex : man ls
+pwd : inidique ou on est situe
+sudo : permet d'executer une commande en tant que root, et don d'avoir les droits
+le symbole * permet de selectionner tout : cp *.txt copie tout les fichiers textes
+
+Permissions : sous le format -rwxrwxrwx : r = perm pour read, w = perm pour modifier le fichier, et x perm pour executer le fichier (pour un dossier, c'est r pour read, w pour créer/ supprimer de fichiers, et x pour travesrer le dossier), le premier tiret veut dire que c'est un fichier
+Puis, on découpe le reste, rw-r----- en trois :
+
+    les trois caractères rw- indiquent les droits du propriétaire du fichier.
+
+    Dans le cas du fichier1.txt, sasha (le propriétaire) a les droits de lecture et d'écriture sur ce fichier. Il n'a pas les droits d'exécution, mais c'est tout à fait normal : ce fichier n'est pas exécutable.
+
+    les trois caractères suivants r-- indiquent les droits des membres du groupe auquel le fichier appartient. (relis cette phrase plusieurs fois jusqu'à la comprendre !)
+
+    Dans le cas du fichier1.txt, les membres du groupe etu auront le droit de lecture sur ce fichier. En revanche, ils n'auront pas le droit d'écriture (ni celui d'exécution).
+
+    les trois derniers caractères --- indiquent les droits de tous les autres utilisateurs.
+On peut représenter les perms en binaire (codage octal) : on considère chaque triplet comme un nombre binaire en base 8 : rwx r-- r-x devient 7 4 5, donc 745
+                                                                                                                          111 100 101
+Pour mdoifier les droits d'un fichier, on utilise chmod u+r nom_fichier.txt    (u = user g = group a = all (o pour enlever au lieu de a)) + le droit qu'on veut lui accorder (r, w ou x)
+
+(\___/)
+(='.'=)
+(")_(")
+
+Un processus est une boite contenant un programme qui s'exécute ainsi que d'autres informations. On peut envoyer des signaux au processus (communiquer avec la boite) à l'aide de kill.
+ctrl+z et ctrl+c permettent respectivement d'envoyer SIGSTOP et SIGINT à un processus.
+fg et bg permettent respectivement de mettre en avant-plan et en arrière plan un processus préalablement gelé (avec SIGSTOP ou ctrl+z)
+
+SCRIPTS
+Des fichiers de commandes bash existent, en .sh . On peut l'executer avec la commande bash nom_fichier.sh
+On peut aussi executer d'autres fichiers, come des fichiers python, ou de sfichiers pearl : python3 nom_fichier.py et pearl nom_fichier.pl 
+VARIABLES
+On peut créer des variables comme en python, avec la commande nom_var="val_var" SANS ESPACE. Avec echo $nom_var, on peut print la variable en question. $nom_var permet d'acceder à la valeur de la variable nom_var
+
+FICHIERS 
+ls -l > essai.txt renvoie le résultat de ls -l dans le fichier essai.txt. Si le fichier n'existe pas, il le crée. Cette commande écrase le contenu précédent du fichier. pour
+que ça n'arrive pas, on tape ls -l >> essai.txt. Pour renvoyer un message d'erreur, on utilise cat fichier_faux 2> essai.txt
+
+INSTALLATION
+On peut installer des logiciels / lignes de commandes via un terminal, avec la commande apt. On écrit "sudo apt install sl" pour installer la commande sl
+ Pour faire une recherche par mot clef dans ta liste locale de paquets, tu peux par exemple taper : apt-cache search chrome .
+Pour mettre à jour le système :  sudo apt upgrade

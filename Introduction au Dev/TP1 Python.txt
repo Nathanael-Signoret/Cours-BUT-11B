@@ -1,0 +1,55 @@
+2.1 Les litteraux
+______________________
+  14   |Litteral|int  |
+  14.0 |Litteral|float|
+ (14,0)|Litteral|tuple|
+  '14' |Litteral|str  |
+  "14" |Litteral|str  |
+  "x"  |Litteral|str  |
+   x   |Variable|undef|
+
+2.2 Les expressions 
+_______________________
+ 14+5    |19    |int  |
+ 14/5    |2.8   |float|
+ 14//5   |2     |int  |
+ 14%5    |4     |int  |
+ "14 + 5"|"14.5"|str  |
+ "14"+"5"|"145" |str  |
+ 14.0 + 5|19.0  |float|
+ 14 + 5.0|19.0  |float|
+ 14.0//5 |2.0   |float|
+
+2.3 Les comparaisons 
+________________________________
+ 14>2              |True |bool|
+ 14.0>2            |True |bool|
+ 14>>2             |3    |int |
+ 14>=14            |True |bool|
+ 14=12             |Error|    |
+ 14==12            |False|bool|
+ 14==14.0          |True |bool|
+ 14=="14"          |False|bool|
+ "coucou"=='coucou'|True |bool|
+ "18">14           |Error|    |
+ "20">"5"          |False|bool|
+
+2.4 Priorité des opérateurs 
+______________________________________
+ 14+3*5                   |29   |int |
+ 14-3+2                   |13   |int |
+ 14-(3+2)                 |9    |int |
+ 3*4==2*6                 |True |bool|
+ False and False or True  |True |bool|
+ True or False and False  |True |bool|
+ False and (False or True)|False|bool|
+ 3*4==2*6 and 4>5         |False|bool|
+
+2.5 Les nombres flottants
+_____________________________________
+ 14*2/3            |9.33333334|float|
+ 14*2//3           |9         |int  |
+ 2/3*14            |9.33333332|float|
+ 2//3*14           |0         |int  |
+ 14*2/3 == 2/3*14  |False     |bool |
+ 14*2//3 == 2//3*14|Flase     |bool |
