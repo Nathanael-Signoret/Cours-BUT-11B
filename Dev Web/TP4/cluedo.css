@@ -1,1 +1,32 @@
-/* A COMPLETER */
+.detournee{
+    text-decoration: underline;
+}
+
+.contandante{
+    font-weight: bold;
+}
+
+article h1, article h2, article h3{
+    color: red;
+}
+
+nav ul ul li{
+    list-style-type: none;
+}
+
+#armes>ul>li{
+    color: green
+}
+
+#armes>ul>li>*{
+    color: blue
+}
+
+h2 img, h3 img{
+  width : 1em;
+  height : 1em;
+}
+
+aside img{
+    width: 20vw;
+}
