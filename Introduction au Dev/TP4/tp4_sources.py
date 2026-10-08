@@ -88,11 +88,19 @@ def chaine_en_nombre(chaine):
             nb += 9*10**(len(chaine)-1-i)
     return nb
 
+def chaine_en_nombre2(chaine):
+    nb = 0
+    ch = "0123456789"
+    for i in range(len(chaine)):
+        for j in range(len(ch)):
+            if chaine[i] == ch[j]:
+                nb += j*10**(len(chaine)-1-i)
+    return nb
 
-assert chaine_en_nombre("2021") == 2021
-assert chaine_en_nombre("9876543210") == 9876543210
-assert chaine_en_nombre("") == 0
-assert chaine_en_nombre("VIEGO") == 0
+assert chaine_en_nombre2("2021") == 2021
+assert chaine_en_nombre2("9876543210") == 9876543210
+assert chaine_en_nombre2("") == 0
+assert chaine_en_nombre2("VIEGO") == 0
             
 def recherche_mot(tab, l):
     tab_res = []
@@ -109,3 +117,43 @@ def test_recherche():
 
 test_recherche()
 
+def alpha(chaine):
+    tab = []
+    ch = ""
+    for i in range (len(chaine)):
+        if chaine[i].isalpha():
+            ch = ch + chaine[i]
+        else:
+            if ch != "":
+                tab.append(ch)
+                ch = ""
+    if ch != "":
+        tab.append(ch)
+    return tab
+
+def recherche_mot2(chaine, l):
+    tab_ch = alpha(chaine)
+    return recherche_mot(tab_ch, l)
+
+print(recherche_mot2("Cela fait déjà 28 jours! 28 jours à l’IUT’O! Cool!!", "C"))
+
+def liste_true(n):
+    tab = [False, False]
+    for i in range(2, n+1):
+        tab.append(True)
+    return tab
+
+def multiple_false(tab, x):
+    for i in range(2, len(tab)):
+        if i % x == 0 and i != x:
+            tab[i] = False
+    return tab
+
+def eratosthene(n):
+    tab_era = liste_true(n)
+    for i in range(2, n+1):
+        multiple_false(tab_era, i)
+    return tab_era
+
+print(multiple_false([False, False, True, True, True, True, True], 2))
+print(eratosthene(12))
