@@ -178,3 +178,15 @@ def test_charger_profils():
     profils = ssma.charger_profils(chemin('ssma1.csv'))
     assert len(profils) == 705
     assert profils[0] == (105, 'Afghanistan', 'LinkedIn', 2.9, 7.0, 7, 5)
+
+test_est_dependant()
+test_est_avant()
+test_moyenne_heures_ecran()
+test_taux_dependance()
+test_profil_plus_dependant()
+test_filtre_plateforme()
+test_filtre_heures_ecran()
+test_inserer_plateforme()
+test_liste_plateformes()
+test_premier_profil_dependant()
+test_est_bien_triee()

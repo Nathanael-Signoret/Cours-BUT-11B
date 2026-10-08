@@ -150,10 +150,14 @@ def multiple_false(tab, x):
     return tab
 
 def eratosthene(n):
+    tab = []
     tab_era = liste_true(n)
     for i in range(2, n+1):
         multiple_false(tab_era, i)
-    return tab_era
+    for i in range(len(tab_era)):
+        if tab_era[i] == True:
+            tab.append(i)
+    return tab
 
 print(multiple_false([False, False, True, True, True, True, True], 2))
 print(eratosthene(12))

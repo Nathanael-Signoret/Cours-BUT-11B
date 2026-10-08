@@ -23,7 +23,10 @@ def est_dependant(profil):
     Returns:
         bool: True si l'étudiant est dépendant, False sinon
     """
-    pass
+    if profil[6] >= 7:
+        return True
+    else:
+        return False
 
 
 def est_avant(profil1, profil2):
@@ -39,7 +42,10 @@ def est_avant(profil1, profil2):
     Returns:
         bool: True si profil1 se place avant profil2, False sinon
     """
-    pass
+    if profil1[1] < profil2[1] or (profil1[1] == profil2[1] and profil1[0] < profil2[0]):
+        return True 
+    else :
+        return False
 
 
 def moyenne_heures_ecran(liste_profils):
@@ -51,7 +57,13 @@ def moyenne_heures_ecran(liste_profils):
     Returns:
         float: le temps d'écran quotidien moyen en heures, ou None si la liste est vide
     """
-    pass
+    if liste_profils == []:
+        return None
+    somme = 0
+    for profil in liste_profils:
+        somme = somme + profil[3]
+    return somme/ len(liste_profils)
+
 
 
 def taux_dependance(liste_profils):
@@ -63,7 +75,13 @@ def taux_dependance(liste_profils):
     Returns:
         float: le pourcentage d'étudiants dépendants, ou None si la liste est vide
     """
-    pass
+    if liste_profils == []:
+        return None
+    somme = 0
+    for profil in liste_profils:
+        if est_dependant(profil) == True:
+            somme += 1
+    return (somme/len(liste_profils)) *100
 
 
 def profil_plus_dependant(liste_profils):
@@ -76,7 +94,16 @@ def profil_plus_dependant(liste_profils):
     Returns:
         tuple: le profil ayant le plus fort score d'addiction, ou None si la liste est vide
     """
-    pass
+    if liste_profils == []:
+        return None
+    maxi = liste_profils[0]
+    for profil in liste_profils:
+        if profil[6] > maxi[6]:
+            maxi = profil
+    return maxi
+
+
+
 
 
 def filtre_plateforme(liste_profils, plateforme):
@@ -90,7 +117,11 @@ def filtre_plateforme(liste_profils, plateforme):
     Returns:
         list: la sous-liste des profils utilisant principalement ce réseau social
     """
-    pass
+    tab_reseau = []
+    for profil in liste_profils :
+        if profil[2] == plateforme:
+            tab_reseau.append(profil)
+    return tab_reseau
 
 
 def filtre_heures_ecran(liste_profils, heures_min, heures_max):
@@ -105,7 +136,11 @@ def filtre_heures_ecran(liste_profils, heures_min, heures_max):
     Returns:
         list: la sous-liste des profils dont le temps d'écran est dans l'intervalle
     """
-    pass
+    sous_liste = []
+    for profil in liste_profils :
+        if heures_min <= profil[3] and profil[3] <= heures_max :
+            sous_liste.append(profil)
+    return sous_liste
 
 
 def inserer_plateforme(liste_noms, plateforme):
@@ -120,7 +155,17 @@ def inserer_plateforme(liste_noms, plateforme):
     Returns:
         list: la liste triée et sans doublon contenant les noms de liste_noms et plateforme
     """
-    pass
+    if liste_noms == []:
+        return [plateforme]
+    for i in range (len(liste_noms)) :
+        if liste_noms[i] > plateforme :
+            i_plat = i
+    tab_final = []
+    for j in range (len(liste_noms)):
+        if j == i_plat :
+            tab_final.append(plateforme)
+        tab_final.append(liste_noms[j])
+    return tab_final
 
 
 def liste_plateformes(liste_profils):
@@ -133,7 +178,10 @@ def liste_plateformes(liste_profils):
     Returns:
         list: la liste triée et sans doublons des noms de réseaux sociaux (str)
     """
-    pass
+    liste_reseaux = []
+    for profil in liste_profils:
+        liste_reseaux = inserer_plateforme(liste_reseaux, profil[2])
+    return liste_reseaux
 
 
 def premier_profil_dependant(liste_profils):
@@ -146,7 +194,9 @@ def premier_profil_dependant(liste_profils):
     Returns:
         tuple: le premier profil dépendant de la liste, ou None s'il n'y en a aucun
     """
-    pass
+    for profil in liste_profils:
+        if est_dependant(profil):
+            return profil
 
 
 def est_bien_triee(liste_profils):
@@ -160,7 +210,12 @@ def est_bien_triee(liste_profils):
     Returns:
         bool: True si la liste est bien triée et sans doublon, False sinon
     """
-    pass
+    for i in range(1, len(liste_profils)):
+        if liste_profils[i-1][1] > liste_profils[i][1]:
+            return False
+        elif liste_profils[i-1][1] == liste_profils[i][1] and liste_profils[i-1][0] > liste_profils[i][0]:
+            return False
+    return True
 
 
 def recherche_dichotomique(liste_profils, pays, identifiant):
