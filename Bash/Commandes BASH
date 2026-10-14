@@ -63,3 +63,5 @@ INSTALLATION
 On peut installer des logiciels / lignes de commandes via un terminal, avec la commande apt. On écrit "sudo apt install sl" pour installer la commande sl
  Pour faire une recherche par mot clef dans ta liste locale de paquets, tu peux par exemple taper : apt-cache search chrome .
 Pour mettre à jour le système :  sudo apt upgrade
+
+https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/40172-extraire-trier-et-filtrer-des-donnees
