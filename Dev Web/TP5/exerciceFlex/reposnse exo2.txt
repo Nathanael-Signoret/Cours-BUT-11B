@@ -1,0 +1,55 @@
+2.1
+body {
+    display: flex;
+}
+2.2
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+section, header, footer{
+    flex-basis: 50%;
+}
+2.3 
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+section, header{
+    flex-basis: 50%;
+}
+footer{
+    flex-basis: 100%;
+}
+2.4
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+section, header{
+    flex-basis: 49.5%;
+}
+footer{
+    flex-basis: 99.5%;
+}
+section, header, footer{
+    margin: 0.25%;
+}
+2.5
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    flex-basis: 99.5%;
+}
+section{
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+footer{
+    flex-basis: 99.5%;
+}
+section, header, footer{
+    margin: 0.25%;
+}

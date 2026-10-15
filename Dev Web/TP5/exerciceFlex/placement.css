@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+header{
+    flex-basis: 99.5%;
+}
+section{
+    flex-basis: 30%;
+    flex-grow: 1;
+}
+footer{
+    flex-basis: 99.5%;
+}
+section, header, footer{
+    margin: 0.25%;
+}

@@ -1,0 +1,1 @@
+1.2 l'instruction return xxx s'effectue si la valeur valeur est présente au moins 4 fois dans le tableau liste
